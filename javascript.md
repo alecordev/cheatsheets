@@ -73,34 +73,29 @@ setInterval('autoRefresh1()', 5000); // this will reload page after every 5 seco
 
 #### Refresh div or span on HTML page after specific time
 
-In this part we will use JQuery to perform the task, as its provides few of the best options that can help us.
-
-Suppose you have a div with ID as result similar to following:
-
 `<div id="result"></div>`
 
-Then JQuery code will be as follows:
+Then jQuery code:
 
-```
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-   <script>
- function autoRefresh_div()
- {
-      $("#result").load("load.html");// a function which will load data from other file after x seconds
-  }
+```javascript
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+    function autoRefresh_div()
+    {
+        $("#result").load("load.html"); // a function which will load data from other file after x seconds
+    }
+    setInterval('autoRefresh_div()', 5000); // refresh div after 5 secs
+</script>
 
-  setInterval('autoRefresh_div()', 5000); // refresh div after 5 secs
-            </script>
-
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-   <script>
- function autoRefresh_div()
- {
-      $("#result").load("load.html");// a function which will load data from other file after x seconds
-  }
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+function autoRefresh_div()
+{
+     $("#result").load("load.html");// a function which will load data from other file after x seconds
+}
  
-  setInterval('autoRefresh_div()', 5000); // refresh div after 5 secs
-            </script>
+setInterval('autoRefresh_div()', 5000); // refresh div after 5 secs
+</script>
 ```
 
-Similarly you can use $.ajax() or $.post() etc instead of load() function and put the response in a div or a span.
+$.ajax() or $.post() and others can be used instead of load() function and put the response in a div or a span.

@@ -2,22 +2,22 @@
 
 ## Cheatsheet
 
-- df.columns
-- df.index
-- pd.unique(df['column_name']); df.column_name.unique()
-- df.dropna(); df.column_name.unique()
-- df.drop('column_name', axis=1)
-- df.drop_duplicates('column_name')
-- df.groupby('column_name').count()
-- df['column_name'].describe()
-- df[df['column_name'].isin(list_of_values_to_filter_with)]
-- df['column_name'].value_counts()
-- buckets = df.groupby(pd.cut(df['column_name'], [60, 70, 80, 90, 100]))['column_name'].count()
-- pd.DataFrame(df['column_name'].value_counts(), columns=['count'])
-- df['column_name'].quantile(0.95)
-- grouped = df.groupby('column_name')
-- grouped['column_name'].agg([np.sum, np.mean, np.std])
-- grouped['column_name'].agg({'result1': np.sum, 'result2': np.mean})
+- `df.columns`
+- `df.index`
+- `pd.unique(df['column_name']); df.column_name.unique()`
+- `df.dropna(); df.column_name.unique()`
+- `df.drop('column_name', axis=1)`
+- `df.drop_duplicates('column_name')`
+- `df.groupby('column_name').count()`
+- `df['column_name'].describe()`
+- `df[df['column_name'].isin(list_of_values_to_filter_with)]`
+- `df['column_name'].value_counts()`
+- `buckets = df.groupby(pd.cut(df['column_name'], [60, 70, 80, 90, 100]))['column_name'].count()`
+- `pd.DataFrame(df['column_name'].value_counts(), columns=['count'])`
+- `df['column_name'].quantile(0.95)`
+- `grouped = df.groupby('column_name')`
+- `grouped['column_name'].agg([np.sum, np.mean, np.std])`
+- `grouped['column_name'].agg({'result1': np.sum, 'result2': np.mean})`
 
 ## Common patterns
 
@@ -36,24 +36,23 @@ df = df.append({'A': 1, 'B': 2}, ignore_index=True)
 dates = pd.date_range('20130101', periods=6)
 df = pd.DataFrame(np.random.randn(6,4), index=dates, columns=list('ABCD'))
 
-In [10]: df2 = pd.DataFrame({ 'A' : 1.,
-   ....:                      'B' : pd.Timestamp('20130102'),
-   ....:                      'C' : pd.Series(1,index=list(range(4)),dtype='float32'),
-   ....:                      'D' : np.array([3] * 4,dtype='int32'),
-   ....:                      'E' : pd.Categorical(["test","train","test","train"]),
-   ....:                      'F' : 'foo' })
-   ....: 
+df2 = pd.DataFrame({ 'A' : 1.,
+                     'B' : pd.Timestamp('20130102'),
+                     'C' : pd.Series(1, index=list(range(4)), dtype='float32'),
+                     'D' : np.array([3] * 4, dtype='int32'),
+                     'E' : pd.Categorical(["test","train","test","train"]),
+                     'F' : 'foo' })
 
-In [11]: df2
-Out[11]: 
+df2
+
      A          B    C  D      E    F
 0  1.0 2013-01-02  1.0  3   test  foo
 1  1.0 2013-01-02  1.0  3  train  foo
 2  1.0 2013-01-02  1.0  3   test  foo
 3  1.0 2013-01-02  1.0  3  train  foo
 
-In [16]: df.index
-Out[16]: 
+df.index
+
 DatetimeIndex(['2013-01-01', '2013-01-02', '2013-01-03', '2013-01-04',
                '2013-01-05', '2013-01-06'],
               dtype='datetime64[ns]', freq='D')

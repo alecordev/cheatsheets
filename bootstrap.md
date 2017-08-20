@@ -1,5 +1,7 @@
 # Bootstrap Summary
 
+Cheatsheet for bootstrap classes and snippets when using the bootstrap framework.
+
 ## Paragraph Classes
 
 - text-muted, text-primary, text-success, text-info, text-warning, text-danger
@@ -25,7 +27,7 @@
 
 ## Modal
 
-**Preconditions**: bootstrap.min.css jquery.min.css bootstrap.min.js
+**Preconditions**: `bootstrap.min.css` `jquery.min.css` `bootstrap.min.js`
 
 ```html
 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modalInfo">
